@@ -19,3 +19,6 @@ var myweb = {
 	}
 };
 
+myweb.admin = {
+		
+};

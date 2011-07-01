@@ -139,4 +139,12 @@ float: right;
 }
 .page-navi{
 	margin: 5px 0;
+	text-align: right;
+}
+
+#sidebar .sidebar-menu{
+	
+}
+#sidebar .sidebar-menu ul li{
+	line-height: 24px;
 }

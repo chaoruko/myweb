@@ -20,8 +20,9 @@ myweb.article = {
 	}
 };
 
-myweb.board = {
+myweb.admin.board = {
 	init : function() {
+		
 		myweb.service({
 			url : "/person/list",
 			success : function(response) {
@@ -38,7 +39,7 @@ myweb.board = {
 			}
 		});
 		myweb.service({
-			url : "/board/optionsEntryOpts",
+			url : "/admin/board/optionsEntryOpts",
 			success : function(response) {
 				var opt = '<option value="" />';
 				$(response.list).each(
@@ -53,5 +54,10 @@ myweb.board = {
 			}
 		});
 
+	}
+};
+myweb.blog = {
+	init : function(){
+		$("#blogFormBodyText").cleditor({width:600, height:300});
 	}
 };

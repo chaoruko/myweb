@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	$(function() {
-		myweb.board.init();
+		myweb.blog.init();
 	});
 </script>
 
@@ -16,16 +16,19 @@
 	<html:hidden property="boardId" />
 
 	<ul>
-		<li><label><bean:message key="labels.title" /> </label> <span><html:text
-					property="title" /> </span></li>
+		<li><label><bean:message key="labels.title"/> </label> <span><html:text
+					property="title" style="width:600px;"/> </span></li>
 		<li><label><bean:message key="labels.bodyText" /> </label> <span><html:textarea
-					property="bodyText"></html:textarea> </span>
+					property="bodyText" styleId="blogFormBodyText"></html:textarea> </span>
 		</li>
 
 	</ul>
 	<div class="actions">
 		<html:submit property="save">
 			<bean:message key="labels.save" />
+		</html:submit>
+		<html:submit property="delete">
+			<bean:message key="labels.delete" />
 		</html:submit>
 	</div>
 </s:form>

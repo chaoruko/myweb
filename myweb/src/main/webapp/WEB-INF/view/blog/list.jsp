@@ -5,10 +5,17 @@
 		myweb.article.init();
 	});
 </script>
-<s:link href="/board">
-	<bean:message key="labels.board" />
-</s:link>
-<div class="pageTitle">${board.name}</div>
+
+<div class="pageTitle">
+	[
+	<s:link href="/board">
+		<bean:message key="labels.board" />
+	</s:link>
+	]
+	<s:link href="/blog/?boardId=${board.id}">
+		${board.name}
+	</s:link>
+</div>
 
 <c:if test="${loggedIn && board.adminPersonId == userDto.id}">
 	<div class="page-navi">
@@ -24,9 +31,8 @@
 		style="margin-top: 20px; border-left: gray solid 1px;">
 		<!-- [${a.id}]  -->
 		<div
-			style="font-weight: bold; border-left: gray solid 10px;border-bottom: gray solid 1px;padding:10px;">
-			${a.title}
-		</div>
+			style="font-weight: bold; border-left: gray solid 10px; border-bottom: gray solid 1px; padding: 10px;">
+			${a.title}</div>
 		<div class="created" style="text-align: right;">
 
 			<c:if
@@ -38,7 +44,13 @@
 				name="articleId" value="${a.id}">
 
 		</div>
-		<div class="bodyText" style="margin-left: 10px;line-height: 24px;">${f:br(f:h(a.bodyText))}</div>
+		<div class="bodyText" style="margin-left: 10px; line-height: 24px;">
+			<%--
+		${f:br(f:h(a.bodyText))}
+		 --%>
+			${a.bodyText}
+
+		</div>
 
 
 	</div>

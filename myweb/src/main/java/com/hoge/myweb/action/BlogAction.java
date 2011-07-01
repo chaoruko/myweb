@@ -19,6 +19,7 @@ import com.hoge.myweb.service.CommentService;
 
 public class BlogAction extends BaseAction {
 
+    public final static String blogsJsp = "blogs.jsp";
     public final static String indexJsp = "index.jsp";
     public final static String editJsp = "edit.jsp";
 
@@ -40,10 +41,15 @@ public class BlogAction extends BaseAction {
 
     public Article article;
 
+    public List<Board> blogs;
     public Board board;
 
     @Execute(validator = false)
     public String index() {
+        if(form.boardId == null || form.boardId.intValue() == 0){
+            blogs = boardService.findAllBlogsWithAdmin();
+            return blogsJsp;
+        }
         board = boardService.findById(form.boardId);
         articles = articleService.findAllByBoardId(form.boardId);
 

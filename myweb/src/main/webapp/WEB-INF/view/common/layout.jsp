@@ -5,7 +5,10 @@
 <link rel="stylesheet" type="text/css" href="${f:url('/css/myweb.css')}" />
 <link rel="stylesheet" type="text/css"
 	href="${f:url('/css/smoothness/jquery-ui-1.8.13.custom.css')}" />
+<link rel="stylesheet" type="text/css"
+	href="${f:url('/js/cleditor/jquery.cleditor.css')}" />
 <script src="${f:url('/js/jquery-1.5.1.min.js')}"></script>
+<script src="${f:url('/js/cleditor/jquery.cleditor.min.js')}"></script>
 <script src="${f:url('/js/jquery-ui-1.8.13.custom.min.js')}"></script>
 <script src="${f:url('/js/myweb.js')}"></script>
 <script src="${f:url('/js/board.js')}"></script>
