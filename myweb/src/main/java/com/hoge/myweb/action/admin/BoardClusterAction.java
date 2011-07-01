@@ -23,7 +23,7 @@ public class BoardClusterAction extends BaseAction {
     public final static String indexJsp = "index.jsp";
 
     @Resource
-    public BoardService boarsSearvice;
+    public BoardService boardService;
 
     @Resource
     public BoardClusterService boardClusterService;
@@ -46,7 +46,7 @@ public class BoardClusterAction extends BaseAction {
     public String index() {
         boardClusters = boardClusterService
                 .findAllByBoardIdWithCluster(form.boardId);
-        board = boarsSearvice.findById(form.clusterId);
+        board = boardService.findById(form.boardId);
         clusters = clusterService.findAll();
         return indexJsp;
     }

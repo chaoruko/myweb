@@ -39,6 +39,7 @@
 				&amp;
 				<bean:message key="labels.blog" />
 				</s:link></li>
+
 		</ul>
 	</c:if>
 </div>

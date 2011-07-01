@@ -16,13 +16,13 @@ import static org.seasar.extension.jdbc.operation.Operations.*;
 public class BoardClusterService extends AbstractService<BoardCluster> {
 
     public List<BoardCluster> findAllByBoardId(Integer borderId) {
-        return select().orderBy(asc(id())).where("border_id = ?", borderId)
+        return select().orderBy(asc(id())).where("board_id = ?", borderId)
                 .getResultList();
     }
 
     public List<BoardCluster> findAllByBoardIdWithCluster(Integer borderId) {
         return select().orderBy(asc(id())).leftOuterJoin(cluster())
-                .where("border_id = ?", borderId).getResultList();
+                .where("board_id = ?", borderId).getResultList();
     }
 
     /**
