@@ -4,6 +4,8 @@
 <div class="pageTitle">
 	<s:link href="/board">
 		<bean:message key="labels.board" />
+		&amp;
+		<bean:message key="labels.blog" />
 	</s:link>
 </div>
 
@@ -14,7 +16,11 @@
 			<bean:message key="labels.create" />
 		</s:link>
 	</div>
+
+
 </c:if>
+
+
 
 <ul>
 	<c:forEach items="${boards}" var="b">
@@ -24,8 +30,7 @@
 <s:link href="edit?id=${b.id}">
 					<bean:message key="labels.edit" />
 				</s:link>
-			</c:if>
-		</li>
+			</c:if></li>
 	</c:forEach>
 </ul>
 
@@ -37,9 +42,7 @@
 <s:link href="edit?id=${b.id}">
 					<bean:message key="labels.edit" />
 				</s:link>
-			</c:if>
-		</li>
+			</c:if></li>
 	</c:forEach>
 </ul>
-
 

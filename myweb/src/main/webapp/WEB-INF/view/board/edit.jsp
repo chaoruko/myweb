@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <tiles:insert template="/WEB-INF/view/common/layout.jsp" flush="true" >
-<tiles:put name="title" value="Person"/>
+<tiles:put name="title" value="Board"/>
 <tiles:put name="content" value="/WEB-INF/view/board/form.jsp" />
 </tiles:insert>
 

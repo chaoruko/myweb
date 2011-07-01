@@ -5,7 +5,7 @@
 </script>
 
 <div class="pageTitle">
-	<s:link href="/blog/?boardId=${b.id}">
+	<s:link href="/blog/?boardId=${board.id}">
 		${board.name}
 	</s:link>
 </div>
