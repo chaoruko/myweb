@@ -16,12 +16,17 @@ import static org.seasar.extension.jdbc.operation.Operations.*;
 public class MemberService extends AbstractService<Member> {
 
     public List<Member> findAllByPersonIdWithPerson(Integer personId) {
-        return select().orderBy(asc(id())).leftOuterJoin(person())
+        return select().orderBy(asc(id())).innerJoin(person())
                 .where("person_id=?", personId).getResultList();
     }
 
     public List<Member> findAllByClusterIdWithCluster(Integer clusterId) {
-        return select().orderBy(asc(id())).leftOuterJoin(cluster())
+        return select().orderBy(asc(id())).innerJoin(cluster())
+                .where("cluster_id=?", clusterId).getResultList();
+    }
+    public List<Member> findAllByClusterIdWith(Integer clusterId) {
+        return select().orderBy(asc(id())).innerJoin(person())
+                .innerJoin(cluster())
                 .where("cluster_id=?", clusterId).getResultList();
     }
 

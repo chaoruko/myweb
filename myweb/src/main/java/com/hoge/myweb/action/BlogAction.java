@@ -1,28 +1,26 @@
 package com.hoge.myweb.action;
 
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import net.arnx.jsonic.JSON;
-
 import org.seasar.framework.beans.util.BeanUtil;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
 
-import com.hoge.myweb.entity.Board;
 import com.hoge.myweb.entity.Article;
+import com.hoge.myweb.entity.Board;
 import com.hoge.myweb.entity.Comment;
 import com.hoge.myweb.form.ArticleForm;
 import com.hoge.myweb.service.ArticleService;
-import com.hoge.myweb.service.CommentService;
 import com.hoge.myweb.service.BoardService;
+import com.hoge.myweb.service.CommentService;
 
 public class BlogAction extends BaseAction {
 
     public final static String indexJsp = "index.jsp";
+    public final static String editJsp = "edit.jsp";
 
     @Resource
     protected CommentService commentService;
@@ -53,31 +51,17 @@ public class BlogAction extends BaseAction {
     }
 
     @Execute(validator = false)
-    public String test1() throws IOException {
-        Integer articleId = form.id;
-        List<Comment> comments = commentService
-                .findByArticleIdWithPerson(articleId);
-        response.setContentType("text/javascript");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(JSON.encode(comments));
-        return null;
+    public String create(){
+        board = boardService.findById(form.boardId);
+        return editJsp;
     }
-
-    @Execute(validator = false)
-    public String test2() {
-        Integer articleId = form.id;
-        article = articleService.findById(articleId);
-        comments = commentService.findByArticleIdWithPerson(articleId);
-        return "comments.jsp";
-    }
-
     @Execute(validator = false)
     public String edit() {
 
         Article board = articleService.findById(form.id);
         BeanUtil.copyProperties(board, form);
 
-        return index();
+        return editJsp;
     }
 
     @Execute(validator = false)

@@ -46,7 +46,7 @@ public class ClusterMemberAction extends BaseAction {
 
     @Execute(validator = false)
     public String index() {
-        members = memberService.findAllByClusterIdWithCluster(form.clusterId);
+        members = memberService.findAllByClusterIdWith(form.clusterId);
         cluster = clusterService.findById(form.clusterId);
         persons = personService.findAll();
         return indexJsp;
