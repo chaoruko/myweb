@@ -1,0 +1,186 @@
+body{
+	margin: 0;
+	font-size: 14px;
+}
+
+a,a:ACTIVE,a:VISITED {
+	text-decoration: none;
+}
+
+a:HOVER {
+	text-decoration: underline;
+}
+#container {
+	width: 100%;
+	margin: auto;
+}
+#header{
+	
+}
+/*
+#navi{
+	
+}
+
+#navi .menu ul li a{
+	font-size: 0.75em;
+	color: #000000;
+	text-decoration: none
+}
+#navi .menu ul li a:hover{
+	color: #ffaa00;
+}
+#navi .menu ul li{
+	display: inline;
+	list-style-type: none;
+	border-left: solid 1x #aaaaaa;
+	margin-left: 15px;
+	padding-left: 15px;
+}
+#navi .menu ul li.first{
+	border-left: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+#navi .menu ul{
+	margin: 0;
+	padding: 0;
+}
+*/
+/*
+#navi .menu{
+	font-size: 0.75em;
+	width: auto;
+	height: 24px;
+	background-color: #0c907c;
+}
+#navi .menu ul{
+	margin: 0;
+	padding: 0;
+	min-width: 605px;
+}
+#navi .menu ul li{
+	list-style-type: none;
+	float: left;
+}
+#navi .menu ul li a{
+	display: block;
+	width: 100px;
+	line-height: 24px;
+	border-right: solid 1px #ffffff;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	background-color: #0c907c;
+}
+#navi .menu ul li a:hober{
+	background-color: #0ce0c0;
+}
+*/
+
+#wrapper {
+	width: 100%;
+	margin: 30px 0;
+	float: left;
+	margin-right: -220px;
+	/*	
+float: right;
+	margin-left: -220px;
+	*/
+}
+
+#content{
+	margin-right: 250px;
+	margin-left: 20px;
+}
+
+#sidebar{
+	width: 200px;
+	float: right; 
+/*	float: left;*/
+	margin: 30px 0;
+	padding-left: 20px;
+}
+
+#footer{
+	clear: both;
+}
+
+#global-messages {
+	color: red;
+}
+
+.pageTitle {
+	font-weight: bold;
+}
+
+/* tables */
+.table {
+	border-collapse: collapse;
+	margin-bottom: 15px;
+}
+
+.table th {
+	padding: 5px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.table .checkbox {
+	margin-left: 5px;
+}
+
+.table td {
+	padding: 5px;
+	font-size:14px; 
+}
+
+.table td.last {
+	text-align: right;
+}
+
+/* forms */
+.form {
+	margin-top: 10px;
+}
+
+.form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.form ul li {
+	list-style: none;
+	margin: 0;
+	padding: 6px;
+	clear: both;
+}
+
+.form ul li label {
+	display: block;
+	font-weight: bold;
+	color: #666;
+}
+
+.form ul li span {
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+
+.form div.actions {
+	clear: both;
+	float: left;
+	padding: 6px;
+}
+
+.form .text {
+	width: 600px;
+}
+
+.form .textarea {
+	width: 600px;
+	height: 200px;
+}
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+    "http://www.seasar.org/dtd/components24.dtd">
+<components namespace="util" >
+
+	<component name="multiPartEmail"
+		class="org.apache.commons.mail.MultiPartEmail"
+		instance="prototype" >
+		<property name="hostName">"localhost"</property>
+		<initMethod name="setSmtpPort">
+			<arg>@java.lang.Integer@parseInt("25")</arg>
+		</initMethod>
+	</component>
+	
+</components>
