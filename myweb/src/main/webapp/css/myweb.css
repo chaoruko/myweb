@@ -25,6 +25,31 @@ a:HOVER {
 	
 }
 
+#global-navi ul li a{
+	font-size: 0.75em;
+	color: #000000;
+	text-decoration: none
+}
+#global-navi ul li a:hover{
+	color: #ffaa00;
+}
+#global-navi ul li{
+	display: inline;
+	list-style-type: none;
+	border-left: solid 1x #aaaaaa;
+	margin-left: 15px;
+	padding-left: 15px;
+}
+#global-navi ul li.first{
+	border-left: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+#global-navi ul{
+	margin: 0;
+	padding: 0;
+}
+
 #wrapper {
 	width: 100%;
 	margin: 30px 0;

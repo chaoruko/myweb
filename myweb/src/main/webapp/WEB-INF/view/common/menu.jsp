@@ -1,18 +1,5 @@
 <div class="sidebar-menu">
-	<ul>
-		<li><s:link href="/menu">
-				<bean:message key="labels.menu" />
-			</s:link></li>
-		<li><s:link href="/portal">
-				<bean:message key="labels.portal" />
-			</s:link></li>
-		<li><s:link href="/board">
-				<bean:message key="labels.board" />
-			</s:link></li>
-		<li><s:link href="/blog">
-				<bean:message key="labels.blog" />
-			</s:link></li>
-	</ul>
+
 
 	<c:if test="${admin}">
 		<br>
