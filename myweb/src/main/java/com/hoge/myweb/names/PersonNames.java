@@ -1,7 +1,6 @@
 package com.hoge.myweb.names;
 
 import com.hoge.myweb.entity.Person;
-import com.hoge.myweb.names.PersonNames._PersonNames;
 import java.util.Date;
 import javax.annotation.Generated;
 import org.seasar.extension.jdbc.name.PropertyName;
