@@ -27,6 +27,11 @@ public class BoardService extends AbstractService<Board> {
                 .orderBy(asc(id())).getResultList();
     }
 
+    public List<Board> findAllBoards() {
+        return select()
+                .where("entry_type = ?", Board.ENTRY_BOARD).orderBy(asc(id()))
+                .getResultList();
+    }
     public List<Board> findAllBoardsWithAdmin() {
         return select().leftOuterJoin(adminPerson())
                 .where("entry_type = ?", Board.ENTRY_BOARD).orderBy(asc(id()))

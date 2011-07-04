@@ -23,11 +23,11 @@ public abstract class BaseAction {
 
     public static String loginPath = "/login?redirect=true";
 
-    @Resource
-    protected HttpServletRequest request;
+//    @Resource
+//    protected HttpServletRequest request;
 
-    @Resource
-    protected HttpServletResponse response;
+//    @Resource
+//    protected HttpServletResponse response;
 
     @Resource
     public UserDto userDto;
@@ -44,7 +44,7 @@ public abstract class BaseAction {
     protected void addMessage(String key) {
         ActionMessages messages = new ActionMessages();
         messages.add(ActionMessages.GLOBAL_MESSAGE, new ActionMessage(key));
-        ActionMessagesUtil.addMessages(request, messages);
+        ActionMessagesUtil.addMessages(RequestUtil.getRequest(), messages);
     }
 
     /** JSONのエンコーディング */

@@ -17,11 +17,20 @@
 </div>
 
 <table class="table">
+	<tr>
+		<th><bean:message key="labels.edit" /></th>
+		<th><bean:message key="labels.id" /></th>
+		<th><bean:message key="labels.name" /></th>
+		<th><bean:message key="labels.admin" /></th>
+		<th><bean:message key="labels.entryType" /></th>
+		<th><bean:message key="labels.cluster" /></th>
+	</tr>
 	<c:forEach items="${boards}" var="b">
 		<tr>
 			<td><s:link href="edit?id=${b.id}">
 					<bean:message key="labels.edit" />
-				</s:link></td>
+				</s:link>
+			</td>
 			<td>${b.id}</td>
 			<td><s:link href="/admin/article/?boardId=${b.id}">${b.name}</s:link>
 			</td>

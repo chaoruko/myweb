@@ -11,6 +11,7 @@ import net.arnx.jsonic.JSON;
 import org.seasar.framework.beans.util.BeanUtil;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 
 import com.hoge.myweb.entity.Board;
 import com.hoge.myweb.entity.Article;
@@ -57,9 +58,9 @@ public class ArticleAction extends BaseAction {
         Integer articleId = form.id;
         List<Comment> comments = commentService
                 .findByArticleIdWithPerson(articleId);
-        response.setContentType("text/javascript");
-        response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(JSON.encode(comments));
+        ResponseUtil.getResponse().setContentType("text/javascript");
+        ResponseUtil.getResponse().setCharacterEncoding("UTF-8");
+        ResponseUtil.getResponse().getWriter().write(JSON.encode(comments));
         return null;
     }
 

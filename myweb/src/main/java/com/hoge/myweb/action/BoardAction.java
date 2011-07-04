@@ -4,8 +4,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import net.arnx.jsonic.JSON;
+
+import org.seasar.framework.beans.util.BeanMap;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 
 import com.hoge.myweb.entity.Board;
 import com.hoge.myweb.form.BoardForm;
@@ -35,4 +39,12 @@ public class BoardAction extends BaseAction {
         return indexJsp;
     }
 
+    @Execute(validator = false)
+    public String boards() {
+        List<Board> list = boardService.findAllBoardsWithAdmin();
+        BeanMap map = new BeanMap();
+        map.put("list", list);
+        ResponseUtil.write(JSON.encode(map), "application/json");
+        return null;
+    }
 }

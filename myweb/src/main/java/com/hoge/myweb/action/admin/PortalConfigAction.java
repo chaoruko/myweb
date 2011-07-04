@@ -1,14 +1,20 @@
 package com.hoge.myweb.action.admin;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import net.arnx.jsonic.JSON;
+
+import org.apache.struts.util.LabelValueBean;
+import org.seasar.framework.beans.util.BeanMap;
 import org.seasar.framework.beans.util.BeanUtil;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
+import org.seasar.struts.util.ResponseUtil;
 
 import com.hoge.myweb.action.BaseAction;
 import com.hoge.myweb.entity.Portal;
@@ -31,6 +37,17 @@ public class PortalConfigAction extends BaseAction {
     protected PortalConfigForm form;
 
     public List<Portal> portals;
+
+    @Execute(validator = false)
+    public String optionsOfKeys() {
+        List<LabelValueBean> opts = new ArrayList<LabelValueBean>();
+        opts.add(new LabelValueBean(Portal.KEY_INFO, Portal.KEY_INFO));
+
+        BeanMap map = new BeanMap();
+        map.put("list", opts);
+        ResponseUtil.write(JSON.encode(map), "application/json");
+        return null;
+    }
 
     @Execute(validator = false)
     public String index() {
@@ -74,7 +91,8 @@ public class PortalConfigAction extends BaseAction {
             entity.updatedAt = dt;
             entity.updatedPersonId = userDto.id;
             portalService.insert(entity);
-            addMessage("message.saved");
+            
+            addMessage("message.saved");;
         }
 
         return index();

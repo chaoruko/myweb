@@ -24,6 +24,7 @@ import com.hoge.myweb.service.PersonService;
 public class BoardAction extends BaseAction {
 
     public final static String indexJsp = "index.jsp";
+    
     public final static String editJsp = "edit.jsp";
 
     @Resource
@@ -57,6 +58,10 @@ public class BoardAction extends BaseAction {
         return create();
     }
 
+    /**
+     * 入力形式の選択肢
+     * @return
+     */
     @Execute(validator = false)
     public String optionsEntryOpts() {
         List<LabelValueBean> entryTypes = new ArrayList<LabelValueBean>();

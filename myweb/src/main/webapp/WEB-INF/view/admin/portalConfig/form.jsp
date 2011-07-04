@@ -1,3 +1,8 @@
+<script type="text/javascript">
+	$(function() {
+		myweb.admin.portalConfig.init();
+	});
+</script>
 <div class="pageTitle">
 	<bean:message key="labels.person" />
 </div>
@@ -9,9 +14,16 @@
 
 	<ul>
 		<li><label> <bean:message key="labels.key" /> </label> <span>
-				<html:text property="key" /> </span></li>
+
+
+				<html:select property="key" styleId="portalConfigFormKey">
+				</html:select> </span>
+		</li>
 		<li><label> <bean:message key="labels.keyId" /> </label> <span>
-				<html:text property="keyId" /> </span></li>
+				<html:select property="keyId" styleId="portalConfigFormKeyId">
+				</html:select>
+		</span>
+		</li>
 	</ul>
 
 	<html:submit property="save">
