@@ -1,0 +1,9 @@
+#Mon Jun 20 14:07:01 JST 2011
+DaoType=S2JDBC
+DefaultResourcePath=/myweb/src/main/resources
+DefaultRootPackage=com.hoge.myweb
+DefaultSrcPath=/myweb/src/main/java
+ServletPath=/myweb
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1
