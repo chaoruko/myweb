@@ -7,11 +7,6 @@
 </script>
 
 <div class="pageTitle">
-	[
-	<s:link href="/board">
-		<bean:message key="labels.board" />
-	</s:link>
-	]
 	<s:link href="/blog/?boardId=${board.id}">
 		${board.name}
 	</s:link>
@@ -25,6 +20,28 @@
 	</div>
 </c:if>
 
+
+
+<div>
+totalCount:${totalCount}
+<br>totalPage:${totalPage}
+
+</div>
+<div>
+pageNum:${pageNum}
+</div>
+<div>
+<s:link href="/blog/?boardId=${board.id}&pageNum=${pageNum - 1}">
+prev
+</s:link>
+||
+<s:link href="/blog/?boardId=${board.id}&pageNum=${pageNum + 1}">
+next
+</s:link>
+</div>
+<div style="text-align: right;">
+${pageLinks}
+</div>
 
 <c:forEach items="${articles}" var="a">
 	<div class="article"

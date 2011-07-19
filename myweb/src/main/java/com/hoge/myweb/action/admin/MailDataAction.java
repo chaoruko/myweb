@@ -72,6 +72,7 @@ public class MailDataAction extends BaseAction {
             email.setMsg(mdata.bodyText);
             //            email.setCharset("ISO-2022-JP");
             email.send();
+            
             addMessage("message.sent");
 
             MailSendHistory history = new MailSendHistory();

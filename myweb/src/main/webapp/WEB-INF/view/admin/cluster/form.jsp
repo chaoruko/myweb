@@ -17,9 +17,10 @@
 					property="name" /> </span>
 		</li>
 	</ul>
-
-	<html:submit property="save">
-		<bean:message key="labels.save" />
-	</html:submit>
+	<div class="actions">
+		<html:submit property="save">
+			<bean:message key="labels.save" />
+		</html:submit>
+	</div>
 </s:form>
 

@@ -1,4 +1,3 @@
-header
 <div style="text-align: right;">
 	<c:if test="${loggedIn}">
 	${userDto.code} ${userDto.name} <s:link href="/logout">
@@ -19,6 +18,7 @@ header
 		</s:form>
 	</c:if>
 </div>
+
 <div id="global-navi">
 	<ul>
 		<li><s:link href="/menu">

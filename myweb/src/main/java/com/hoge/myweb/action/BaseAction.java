@@ -21,13 +21,15 @@ import com.hoge.myweb.dto.UserDto;
 
 public abstract class BaseAction {
 
+    public static int PER_PAGE = 3;
+
     public static String loginPath = "/login?redirect=true";
 
-//    @Resource
-//    protected HttpServletRequest request;
+    //    @Resource
+    //    protected HttpServletRequest request;
 
-//    @Resource
-//    protected HttpServletResponse response;
+    //    @Resource
+    //    protected HttpServletResponse response;
 
     @Resource
     public UserDto userDto;
@@ -47,6 +49,25 @@ public abstract class BaseAction {
         ActionMessagesUtil.addMessages(RequestUtil.getRequest(), messages);
     }
 
+
+    /**
+     * 配列要素を文字列により連結する
+     * @param glue 連結文字列
+     * @param pieces 連結したい文字列の配列。
+     * @return すべての配列要素の順序を変えずに、各要素間に glue  文字列をはさんで 1 つの文字列にして返します。
+     */
+    protected String concat(String glue, String[] pieces) {
+        StringBuffer buf = new StringBuffer();
+        for (int i = 0;; i++) {
+            buf.append(pieces[i]);
+            if (i == pieces.length - 1) {
+                break;
+            }
+            buf.append(glue);
+        }
+        return buf.toString();
+    }    
+    
     /** JSONのエンコーディング */
     public static final String JSON_ENCODING = "UTF-8";
 

@@ -20,6 +20,19 @@ import com.hoge.myweb.entity.Article;
         "org.seasar.extension.jdbc.gen.internal.model.ServiceModelFactoryImpl" }, date = "2011/06/20 14:14:14")
 public class ArticleService extends AbstractService<Article> {
 
+    public List<Article> findPageByBoardId(Integer boardId, int limit,
+            String pageNum) {
+        return select().where(" board_id = ?", boardId)
+                .leftOuterJoin(createdPerson()).leftOuterJoin(updatedPerson())
+                .orderBy(desc(id())).limit(limit)
+                .offset((Integer.parseInt(pageNum) - 1) * limit)
+                .getResultList();
+    }
+
+    public long getCountByBoardId(Integer boardId) {
+        return select().where(" board_id = ?", boardId).getCount();
+    }
+
     /**
      * .leftOuterJoin(createdPerson())
      * .leftOuterJoin(updatedPerson())

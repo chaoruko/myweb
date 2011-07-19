@@ -44,23 +44,59 @@ public class BlogAction extends BaseAction {
     public List<Board> blogs;
     public Board board;
 
+    public long totalCount;
+    public long totalPage;
+    public int pageNum;
+
+    public String pageLinks;
+
     @Execute(validator = false)
     public String index() {
-        if(form.boardId == null || form.boardId.intValue() == 0){
+        if (form.boardId == null || form.boardId.intValue() == 0) {
             blogs = boardService.findAllBlogsWithAdmin();
             return blogsJsp;
         }
         board = boardService.findById(form.boardId);
-        articles = articleService.findAllByBoardId(form.boardId);
+        //        articles = articleService.findAllByBoardId(form.boardId);
+        if (form.pageNum == null || "".equals(form.pageNum)) {
+            form.pageNum = "1";
+        }
+        if (Integer.parseInt(form.pageNum) < 1) {
+            form.pageNum = "1";
+        }
+
+        totalCount = articleService.getCountByBoardId(form.boardId);
+        totalPage = (long) Math.ceil((double) totalCount / PER_PAGE);
+        articles = articleService.findPageByBoardId(form.boardId, PER_PAGE,
+                form.pageNum);
+        pageNum = Integer.parseInt(form.pageNum);
+
+        String[] links = new String[(int) totalPage];
+
+        int currentPageNo = Integer.parseInt(form.pageNum);
+        
+        for (int i = 1; i <= totalPage; i++) {
+            if (i == currentPageNo) {
+                links[i - 1] = String.format("<span><b>%d</b></span>",
+                        currentPageNo);
+            } else {
+                links[i - 1] = String
+                        .format("<a title='Page %d' href='/myweb/blog/?boardId=%d&pageNum=%d'>%d</a>",
+                                i, form.boardId.intValue(), i, i);
+            }
+        }
+
+        pageLinks = concat(" ", links);
 
         return indexJsp;
     }
 
     @Execute(validator = false)
-    public String create(){
+    public String create() {
         board = boardService.findById(form.boardId);
         return editJsp;
     }
+
     @Execute(validator = false)
     public String edit() {
 

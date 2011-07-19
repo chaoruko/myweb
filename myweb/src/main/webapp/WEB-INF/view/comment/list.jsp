@@ -6,33 +6,31 @@
 	});
 </script>
 
-<div>${board.name}</div>
-<div>${article.title}</div>
+<div><s:link href="/article/?boardId=${board.id}">${board.name}</s:link></div>
+<div style="font-weight: bold;">${article.title}</div>
 <div style="font-size: 10pt;">${f:br(f:h(article.bodyText))}</div>
 
-<c:if test="${loggedIn}">
-
-	<div>${msg}</div>
-	<s:form>
-		<html:errors />
-		<html:hidden property="articleId" />
-		<html:hidden property="id" />
-		<br>
+<s:form>
+	<html:errors />
+	<html:hidden property="articleId" />
+	<html:hidden property="id" />
+	<br>
 comment:
 <html:textarea property="bodyText" />
 
-		<input type="submit" name="save" value="Save">
-		<input type="submit" name="delete" value="Delete">
-	</s:form>
-
-</c:if>
-
-<c:forEach items="${comments}" var="cm">
-	<div class="comment">
-		<div class="bodyText">
-			${f:br(f:h(cm.bodyText))}<span class="created_by">(${cm.createdPerson.name})</span>
-		</div>
+	<input type="submit" name="save" value="Save">
+	<input type="submit" name="delete" value="Delete">
+</s:form>
 
 
-	</div>
-</c:forEach>
+<table>
+	<c:forEach items="${comments}" var="cm">
+
+		<tr>
+			<td>${cm.createdPerson.name} <br> ${f:br(f:h(cm.bodyText))}
+			</td>
+		</tr>
+
+
+	</c:forEach>
+</table>
