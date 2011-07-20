@@ -9,25 +9,45 @@
 
 	<html:hidden property="id" />
 
-	<ul>
-		<li><label for="personEditCode"><bean:message
-					key="labels.code" /> </label><span> <html:text property="code"
-					styleId="personEditCode" /> </span>
-		</li>
-		<li><label><bean:message key="labels.password" /> </label> <span><html:password
-					property="password" /> </span></li>
+	<table class="form">
+		<tr>
+			<td class="hd"><bean:message key="labels.code" />
+			</td>
+			<td><html:text property="code" styleId="personEditCode"
+					styleClass="text" />
+			</td>
+		</tr>
+		<tr>
+			<td class="hd"><bean:message key="labels.password" />
+			</td>
+			<td><html:password property="password" styleClass="text" />
+			</td>
+		</tr>
 
-		<li><label><bean:message key="labels.name" /> </label> <span><html:text
-					property="name" /> </span></li>
-		<li><label><bean:message key="labels.level" /> </label> <span><html:select
-					property="level">
-					<html:options collection="levels" property="value"
-						labelProperty="label" />
-				</html:select> </span>
-		</li>
-		<li><label><bean:message key="labels.mailAddress" /> </label> <span><html:text
-					property="mailAddress" /> </span></li>
-	</ul>
+		<tr>
+
+			<td class="hd"><bean:message key="labels.name" />
+			</td>
+			<td><html:text property="name" styleClass="text" />
+			</td>
+		</tr>
+		<tr>
+
+			<td class="hd"><bean:message key="labels.level" />
+			</td>
+			<td><html:select property="level">
+					<html:optionsCollection property="levels" />
+				</html:select>
+			</td>
+		</tr>
+		<tr>
+
+			<td class="hd"><bean:message key="labels.mailAddress" />
+			</td>
+			<td><html:text property="mailAddress" styleClass="text" />
+			</td>
+		</tr>
+	</table>
 
 	<div class="actions">
 		<html:submit property="save">

@@ -25,27 +25,30 @@ a:HOVER {
 	
 }
 
-#global-navi ul li a{
+#global-navi ul li a {
 	font-size: 0.75em;
 	color: #000000;
 	text-decoration: none
 }
-#global-navi ul li a:hover{
+
+#global-navi ul li a:hover {
 	color: #ffaa00;
 }
-#global-navi ul li{
+
+#global-navi ul li {
 	display: inline;
-	list-style-type: none;
 	border-left: solid 1x #aaaaaa;
 	margin-left: 15px;
 	padding-left: 15px;
 }
-#global-navi ul li.first{
+
+#global-navi ul li.first {
 	border-left: none;
 	margin-left: 0;
 	padding-left: 0;
 }
-#global-navi ul{
+
+#global-navi ul {
 	margin: 0;
 	padding: 0;
 }
@@ -113,63 +116,125 @@ float: right;
 }
 
 /* forms */
-.form {
-	margin-top: 10px;
+div.form {
+	border: solid 1px green;
 }
 
-.form ul {
-	list-style: none;
+form.form {
+	
+}
+
+form.form ul {
 	margin: 0;
 	padding: 0;
 }
 
-.form ul li {
-	list-style: none;
+form.form ul li {
 	margin: 0;
 	padding: 6px;
 	clear: both;
 }
 
-.form ul li label {
+form.form ul li label {
 	display: block;
 	font-weight: bold;
 	color: #666;
 }
 
-.form ul li span {
+form.form ul li span {
 	float: left;
 	margin: 0 5px 0 0;
 	padding: 0 0 0 20px;
 	font-weight: bold;
 }
 
-.form div.actions {
+form.form ul li span input.text {
+	width: 400px;
+}
+
+form.form .textarea {
+	width: 400px;
+}
+
+form.form div.actions {
 	clear: both;
 	float: left;
 	padding: 6px;
 }
 
-.form .text {
+form.form table.form {
+	
+}
+
+form.form table.form td {
+	font-size: 11pt;
+}
+
+form.form table.form td.hd {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+form.form table.form td input.text {
+	width: 300px;
+}
+
+form.form table.form td input.textlong {
 	width: 600px;
 }
 
-.form .textarea {
+form.form table.form .textarea {
 	width: 600px;
 	height: 200px;
 }
 
-
-.pageTitle{
+.pageTitle {
 	
 }
-.page-navi{
+
+.page-navi {
 	margin: 5px 0;
-	text-align: right;
 }
 
-#sidebar .sidebar-menu{
+#sidebar .sidebar-menu {
 	
 }
-#sidebar .sidebar-menu ul li{
+
+#sidebar .sidebar-menu ul li {
 	line-height: 24px;
+}
+
+div.list table th {
+	border: solid 1px green;
+	font-size: 10pt;
+}
+
+div.list table td {
+	border: solid 1px green;
+	font-size: 10pt;
+}
+
+.block {
+	margin-top: 5px;
+}
+div.article {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+div.article span.title {
+	font-weight: bold;
+}
+
+div.article span.created_at {
+	
+}
+
+div.article span.created_by {
+	
+}
+div.article div.bodyText{
+	
+}
+div.article div.comments{
+	margin-left: 20px;
 }

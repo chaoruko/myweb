@@ -17,12 +17,19 @@ myweb.article = {
 				});
 			});
 		});
+
+		$("#articleListCmdOpen").click(function() {
+			$("#articleListFormWrap").show();
+		});
+		$("#articleListCmdClose").click(function() {
+			$("#articleListFormWrap").hide();
+		});
 	}
 };
 
 myweb.admin.board = {
 	init : function() {
-		
+
 		myweb.service({
 			url : "/person/list",
 			success : function(response) {
@@ -57,7 +64,10 @@ myweb.admin.board = {
 	}
 };
 myweb.blog = {
-	init : function(){
-		$("#blogFormBodyText").cleditor({width:600, height:300});
+	init : function() {
+		$("#blogFormBodyText").cleditor({
+			width : 600,
+			height : 300
+		});
 	}
 };

@@ -1,12 +1,10 @@
 package com.hoge.myweb.action.admin;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.struts.util.LabelValueBean;
 import org.seasar.framework.beans.util.BeanUtil;
 import org.seasar.struts.annotation.ActionForm;
 import org.seasar.struts.annotation.Execute;
@@ -30,8 +28,6 @@ public class PersonAction extends BaseAction {
 
     public List<Person> persons;
 
-    public List<LabelValueBean> levels;
-
     @Execute(validator = false)
     public String index() {
         persons = personService.findAllOrderById();
@@ -44,20 +40,11 @@ public class PersonAction extends BaseAction {
         Person person = personService.findById(form.id);
         BeanUtil.copyProperties(person, form);
 
-        createOpts();
-
         return editJsp;
-    }
-
-    private void createOpts() {
-        levels = new ArrayList<LabelValueBean>();
-        levels.add(new LabelValueBean("normal", Person.LEVEL_DEFAULT.toString()));
-        levels.add(new LabelValueBean("admin", Person.LEVEL_ADMIN.toString()));
     }
 
     @Execute(validator = false)
     public String create() {
-        createOpts();
         return editJsp;
     }
 

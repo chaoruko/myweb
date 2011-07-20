@@ -12,11 +12,9 @@ import org.seasar.struts.annotation.Execute;
 import com.hoge.myweb.action.BaseAction;
 import com.hoge.myweb.entity.Cluster;
 import com.hoge.myweb.entity.Member;
-import com.hoge.myweb.entity.Person;
 import com.hoge.myweb.form.MemberForm;
 import com.hoge.myweb.service.ClusterService;
 import com.hoge.myweb.service.MemberService;
-import com.hoge.myweb.service.PersonService;
 
 public class ClusterMemberAction extends BaseAction {
 
@@ -28,9 +26,6 @@ public class ClusterMemberAction extends BaseAction {
     @Resource
     public MemberService memberService;
 
-    @Resource
-    public PersonService personService;
-
     @ActionForm
     @Resource(name = "memberForm")
     public MemberForm form;
@@ -41,14 +36,10 @@ public class ClusterMemberAction extends BaseAction {
     /** あるグループのメンバー */
     public List<Member> members;
 
-    /** 選択肢 */
-    public List<Person> persons;
-
     @Execute(validator = false)
     public String index() {
         members = memberService.findAllByClusterIdWith(form.clusterId);
         cluster = clusterService.findById(form.clusterId);
-        persons = personService.findAll();
         return indexJsp;
     }
 

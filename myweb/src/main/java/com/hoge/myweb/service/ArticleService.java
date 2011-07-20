@@ -1,9 +1,6 @@
 package com.hoge.myweb.service;
 
-import static com.hoge.myweb.names.ArticleNames.board;
-import static com.hoge.myweb.names.ArticleNames.createdPerson;
-import static com.hoge.myweb.names.ArticleNames.id;
-import static com.hoge.myweb.names.ArticleNames.updatedPerson;
+import static com.hoge.myweb.names.ArticleNames.*;
 import static org.seasar.extension.jdbc.operation.Operations.*;
 
 import java.util.List;
@@ -42,6 +39,7 @@ public class ArticleService extends AbstractService<Article> {
     public List<Article> findAllByBoardId(Integer boardId) {
         return select().where(" board_id = ?", boardId)
                 .leftOuterJoin(createdPerson()).leftOuterJoin(updatedPerson())
+                .leftOuterJoin(comments())
                 .orderBy(desc(id())).getResultList();
     }
 

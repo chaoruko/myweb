@@ -2,6 +2,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title" /></title>
+<link rel="stylesheet" type="text/css" href="${f:url('/css/reset.css')}" />
+
 <link rel="stylesheet" type="text/css" href="${f:url('/css/myweb.css')}" />
 <link rel="stylesheet" type="text/css"
 	href="${f:url('/css/smoothness/jquery-ui-1.8.13.custom.css')}" />
@@ -12,6 +14,7 @@
 <script src="${f:url('/js/jquery-ui-1.8.13.custom.min.js')}"></script>
 <script src="${f:url('/js/myweb.js')}"></script>
 <script src="${f:url('/js/board.js')}"></script>
+<script src="${f:url('/js/member.js')}"></script>
 <script type="text/javascript">
 	$(function() {
 		myweb.init();

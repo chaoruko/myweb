@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title" /></title>
+<link rel="stylesheet" type="text/css" href="${f:url('/css/reset.css')}" />
 <link rel="stylesheet" type="text/css" href="${f:url('/css/myweb.css')}" />
 <link rel="stylesheet" type="text/css"
 	href="${f:url('/css/smoothness/jquery-ui-1.8.13.custom.css')}" />
@@ -22,14 +23,6 @@
 	<div id="container">
 		<div id="header">
 			<tiles:insert page="header.jsp" />
-		</div>
-
-		<div id="navi">
-		<%--
-			<div class="menu">
-				<tiles:insert page="menu.jsp" />
-			</div>
-		 --%>
 		</div>
 
 		<div id="wrapper">
