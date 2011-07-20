@@ -23,6 +23,9 @@ public abstract class BaseAction {
 
     public static int PER_PAGE = 3;
 
+    public static String APP_NAME = "myweb";
+    public static String APP_PATH = "/" + APP_NAME;
+
     public static String loginPath = "/login?redirect=true";
 
     //    @Resource
@@ -49,7 +52,6 @@ public abstract class BaseAction {
         ActionMessagesUtil.addMessages(RequestUtil.getRequest(), messages);
     }
 
-
     /**
      * 配列要素を文字列により連結する
      * @param glue 連結文字列
@@ -66,8 +68,8 @@ public abstract class BaseAction {
             buf.append(glue);
         }
         return buf.toString();
-    }    
-    
+    }
+
     /** JSONのエンコーディング */
     public static final String JSON_ENCODING = "UTF-8";
 

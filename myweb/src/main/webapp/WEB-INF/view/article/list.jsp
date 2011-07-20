@@ -33,7 +33,8 @@
 	</s:form>
 
 </c:if>
-
+<div class="clear">
+</div>
 <c:forEach items="${articles}" var="a">
 	<div class="article">
 		<!-- [${a.id}]  -->

@@ -74,15 +74,15 @@ public class BlogAction extends BaseAction {
         String[] links = new String[(int) totalPage];
 
         int currentPageNo = Integer.parseInt(form.pageNum);
-        
+
         for (int i = 1; i <= totalPage; i++) {
             if (i == currentPageNo) {
                 links[i - 1] = String.format("<span><b>%d</b></span>",
                         currentPageNo);
             } else {
-                links[i - 1] = String
-                        .format("<a title='Page %d' href='/myweb/blog/?boardId=%d&pageNum=%d'>%d</a>",
-                                i, form.boardId.intValue(), i, i);
+                links[i - 1] = String.format("<a title='Page %d' href='"
+                        + APP_PATH + "/blog/?boardId=%d&pageNum=%d'>%d</a>", i,
+                        form.boardId.intValue(), i, i);
             }
         }
 
